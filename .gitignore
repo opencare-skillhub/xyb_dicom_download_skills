@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Python / uv (if this project ever uses local venv)
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Node / npm (if any)
+node_modules/
+package-lock.json
+
+# Generated / temp files
+*.log
+*.tmp
+dist/
+build/
+.tmp/
+
+# OS generated files
+*.out
+*.app
