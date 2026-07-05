@@ -1,8 +1,8 @@
 # xyb-dicom-download-skill
 
-使用 Playwright 自动化下载 DICOM 影像文件的工具。支持批量下载、跨平台（Windows / macOS / Linux），适合用于影像数据备份、科研分析、公益协助等场景。
+使用 Playwright 自动化下载 DICOM 影像文件的工具。支持多站点、批量下载、跨平台（Windows / macOS / Linux），适合用于影像数据备份、科研分析、公益协助等场景。
 
-> ⚠️ **使用限制**：本工具**禁止**用于向患者收费或变相收费。详见 [使用限制](#使用限制)。
+> ⚠️ **使用限制**：本工具**禁止**用于向患者收费或变相收费。详见[使用限制](#使用限制)。
 
 ## 快速开始
 
@@ -70,6 +70,16 @@ uv sync
 ### Windows 上命令找不到
 
 优先使用 `uv run python ...`，不要依赖系统全局 Python 路径。
+
+## 站点说明
+
+| 域名 | 医院 | 文件名 |
+|------|------|--------|
+| `zlyy.tjmucih.cn` | 天肿（天津市肿瘤医院） | `tjmucih_download_dicom.py` |
+| `ylyyx.shdc.org.cn` | 复肿（复旦大学附属肿瘤医院） | `shdc_download_dicom.py` |
+| `zhyl.nyfy.com.cn` | 宁夏总医院（宁夏医科大学总医院） | `nyfy_download_dicom.py` |
+
+`multi_download.py` 会自动根据域名选择对应的下载脚本。如果自动识别不准，也可以通过 `--provider` 手动指定（`tz` / `fz` / `nyfy`）。
 
 ## 致谢
 
