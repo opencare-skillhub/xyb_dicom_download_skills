@@ -1,6 +1,6 @@
 ---
 name: xyb-dicom-download-skill
-description: Help with the xyb/dicom_download project, including quick-start docs, uv + Playwright setup, README/CONTRIBUTING updates, and safe maintenance of the DICOM downloader skill and repo. Use when the user asks about this project, wants to package the workflow into a reusable skill, or needs setup/help text for Windows/macOS/Linux.
+description: DICOM 影像批量下载技能包，基于 hengqujushi/dicom_download 封装。支持天肿(zlyy.tjmucih.cn)、复肿(ylyyx.shdc.org.cn)、宁夏总医院(zhyl.nyfy.com.cn)等多站点，通过 Playwright 自动化下载并提供多 URL 批处理与逐 URL 打包能力。
 ---
 
 # xyb-dicom-download-skill

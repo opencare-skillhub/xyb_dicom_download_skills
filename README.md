@@ -94,9 +94,11 @@ uv sync
 
 ## 致谢
 
-感谢上游开源项目的实现思路与使用方式，为 DICOM 下载工作流打下基础。
+本项目基于 [hengqujushi/dicom_download](https://github.com/hengqujushi/dicom_download) 封装为 ZCode 技能包，感谢原作者的出色工作。
 
-特别感谢**小胰宝志愿者团队**在开源、整理、验证和传播使用经验上的贡献。正是这些分享，让更多人能更顺利地完成环境配置和使用。
+本项目的 **cloud provider** 部分融合/适配了上游开源项目 [Kaciras/cloud-dicom-downloader](https://github.com/Kaciras/cloud-dicom-downloader)。该项目的许可为 **Apache 2.0 + Commons Clause**，其中 Commons Clause 明确不授予 "Sell（以软件功能为核心收费提供产品/服务）" 的权利。
+
+特别感谢**小胰宝志愿者团队**在开源、整理、验证和传播使用经验上的贡献。
 
 ## 使用限制
 
@@ -110,6 +112,12 @@ uv sync
 - 以软件功能本身作为主要收费价值。
 
 如果要做公共服务、公益协助或院内支持，请保持免费、透明、合规。
+
+### 注意事项
+
+- 不要提交任何包含 PHI/敏感信息的数据样本。
+- 不同站点 UI 有差异，若遇到选择器变更或策略不适配，可反馈或调整对应脚本的选择器/策略参数。
+- cloud provider 依赖上游已停止维护的实现，若与本项目已有实现（天肿/复肿/宁夏总医院）重叠，则优先以本项目实现为准。
 
 ## License
 
