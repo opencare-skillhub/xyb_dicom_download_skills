@@ -1,37 +1,95 @@
 # xyb-dicom-download-skill
 
-一个独立、可复用的 ZCode 技能包，用于维护和扩展 `dicom_download` 项目的文档与使用指引。
+使用 Playwright 自动化下载 DICOM 影像文件的工具。支持批量下载、跨平台（Windows / macOS / Linux），适合用于影像数据备份、科研分析、公益协助等场景。
 
-## 这份技能包做什么
+> ⚠️ **使用限制**：本工具**禁止**用于向患者收费或变相收费。详见 [使用限制](#使用限制)。
 
-- 帮助完善 `dicom_download` 项目的 Quick Start / 快速开始。
-- 统一 uv + Python 虚拟环境 + Playwright 的安装说明。
-- 生成适合 Windows / macOS / Linux 的命令示例。
-- 维护 README、CONTRIBUTING 等文档中的伦理与合规表述。
+## 快速开始
+
+### 前置条件
+
+- Python 3.10 或更高版本
+- [uv](https://docs.astral.sh/uv/)（Python 环境管理工具）
+
+### 安装步骤
+
+```bash
+# 1. 安装 Python 依赖
+uv sync
+
+# 2. 安装 Playwright 浏览器（推荐仅安装 Chromium）
+uv run python -m playwright install chromium
+```
+
+### 准备输入文件
+
+新建 `urls.txt`，每行一个分享链接：
+
+```text
+https://example.com/viewer?share_id=AAAA
+https://example.com/viewer?share_id=BBBB
+```
+
+### 开始下载
+
+```bash
+# 统一入口（推荐）
+uv run python multi_download.py --urls-file urls.txt --out-parent ./downloads
+
+# 或直接使用下载脚本
+uv run python shdc_download_dicom.py --urls-file urls.txt --out-parent ./downloads
+```
 
 ## 目录结构
 
 ```text
 xyb-dicom-download-skill/
-├── SKILL.md
-├── README.md
-└── references/
-    ├── quick-start.md
-    └── acknowledgements.md
+├── SKILL.md                      # ZCode 技能定义
+├── README.md                     # 本文件
+├── references/
+│   ├── quick-start.md            # 详细快速开始指南
+│   └── acknowledgements.md       # 致谢与使用限制
+└── scripts/                      # 辅助脚本
 ```
 
-## 重要约定
+## 常见问题
 
-1. 先读项目里的现有文件，再改文档。
-2. Python 依赖写进 `pyproject.toml`，Playwright 浏览器安装保持显式命令。
-3. 命令示例优先使用 `uv run python ...`，减少跨平台差异。
-4. 文档里必须保留以下三项内容：
-   - 感谢引用上游项目；
-   - 感谢小胰宝志愿者开源贡献；
-   - 明确禁止使用本工具向患者收费或变相收费。
+### 浏览器未安装
 
-## 推荐使用场景
+```bash
+# 报错: BrowserType.launch: Executable doesn't exist
+uv run python -m playwright install chromium
+```
 
-- 想把当前的 DICOM 下载流程整理成新手可读的 Quick Start。
-- 想把 README 里分散的安装命令、启动命令和排错说明统一起来。
-- 想把仓库的使用说明整理成可以直接复制给新手的版本。
+### Python 依赖缺失
+
+```bash
+uv sync
+```
+
+### Windows 上命令找不到
+
+优先使用 `uv run python ...`，不要依赖系统全局 Python 路径。
+
+## 致谢
+
+感谢上游开源项目的实现思路与使用方式，为 DICOM 下载工作流打下基础。
+
+特别感谢**小胰宝志愿者团队**在开源、整理、验证和传播使用经验上的贡献。正是这些分享，让更多人能更顺利地完成环境配置和使用。
+
+## 使用限制
+
+**禁止使用本工具向患者收费或变相收费。**
+
+这包括但不限于：
+
+- 直接收费；
+- 以"服务费""支持费""代操作费""培训费"等名义变相收费；
+- 将该工具包装成面向患者的付费下载、托管、代取或代导出服务；
+- 以软件功能本身作为主要收费价值。
+
+如果要做公共服务、公益协助或院内支持，请保持免费、透明、合规。
+
+## License
+
+详见 [LICENSE](LICENSE) 文件。
