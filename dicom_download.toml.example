@@ -1,0 +1,17 @@
+# DICOM 下载主入口默认配置示例
+# 复制本文件为 dicom_download.toml 后按需修改。
+
+provider = "auto"
+mode = "all"
+headless = false
+out_parent = "./downloads"
+
+# 当提示“可能未完整命中全部切片”时，可以调大这两个值。
+max_rounds = 3
+step_wait_ms = 50
+
+# 可选项示例：
+# skip_hd = false
+# quiet_checks = 6
+# quiet_step_ms = 800
+# max_inflight = 6

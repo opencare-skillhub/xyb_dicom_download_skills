@@ -46,6 +46,23 @@ uv run python shdc_download_dicom.py --urls-file urls.txt --out-parent ./downloa
 xyb-dicom-download-skill/
 ├── SKILL.md                      # ZCode 技能定义
 ├── README.md                     # 本文件
+├── common_utils.py               # 通用工具函数
+├── main.py                       # 文本菜单版入口
+├── multi_download.py             # 多站点统一下载路由器
+├── shdc_download_dicom.py        # 复肿下载脚本
+├── tjmucih_download_dicom.py     # 天肿下载脚本
+├── nyfy_download_dicom.py        # 宁夏总医院下载脚本
+├── pyproject.toml                # Python 依赖声明
+├── uv.lock                       # uv 锁定文件
+├── dicom_download.toml.example   # 配置示例
+├── urls.txt.example              # URL 列表示例
+├── LICENSE                       # Apache 2.0
+├── CONTRIBUTING.md               # 贡献指南
+├── tests/
+│   ├── test_common_utils.py
+│   ├── test_main.py
+│   ├── test_multi_download.py
+│   └── test_shdc_download.py
 ├── references/
 │   ├── quick-start.md            # 详细快速开始指南
 │   └── acknowledgements.md       # 致谢与使用限制

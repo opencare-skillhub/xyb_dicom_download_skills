@@ -17,7 +17,7 @@ Thumbs.db
 *.sublime-workspace
 *.code-workspace
 
-# Python / uv (if this project ever uses local venv)
+# Python / uv
 __pycache__/
 *.py[cod]
 *$py.class
@@ -25,6 +25,11 @@ __pycache__/
 .venv/
 venv/
 env/
+.pytest_cache/
+
+# DICOM downloads (generated output)
+downloads/
+*.zip
 
 # Node / npm (if any)
 node_modules/
