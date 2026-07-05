@@ -58,15 +58,9 @@ xyb-dicom-download-skill/
 ├── urls.txt.example              # URL 列表示例
 ├── LICENSE                       # Apache 2.0
 ├── CONTRIBUTING.md               # 贡献指南
-├── tests/
-│   ├── test_common_utils.py
-│   ├── test_main.py
-│   ├── test_multi_download.py
-│   └── test_shdc_download.py
 ├── references/
 │   ├── quick-start.md            # 详细快速开始指南
 │   └── acknowledgements.md       # 致谢与使用限制
-└── scripts/                      # 辅助脚本
 ```
 
 ## 常见问题
